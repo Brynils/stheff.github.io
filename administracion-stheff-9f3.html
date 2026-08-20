@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Administración Stheff</title>
+  <link rel="stylesheet" href="css/style.css?v=20260820j">
+  <link rel="stylesheet" href="css/admin.css?v=20260820j">
+</head>
+<body class="admin-body">
+  <main class="admin-shell">
+    <section id="admin-login" class="admin-login">
+      <p class="eyebrow">STHEFF · ACCESO RESTRINGIDO</p>
+      <h1>Administración</h1>
+      <p>Ingresa el código de administración para gestionar el contenido del catálogo.</p>
+      <form id="admin-login-form">
+        <input type="password" name="password" required placeholder="Código de administrador">
+        <button class="button">Ingresar</button>
+        <small id="admin-login-error"></small>
+      </form>
+    </section>
+    <section id="admin-panel" hidden>
+      <header class="admin-header">
+        <div><p class="eyebrow">PANEL PRIVADO</p><h1>Administración Stheff</h1></div>
+        <button id="admin-logout" class="outline-button">Cerrar sesión</button>
+      </header>
+      <div class="admin-alert">Las imágenes se guardarán en carpetas separadas cuando la página esté publicada en un alojamiento compatible con PHP. Al abrirla localmente se conservarán en este navegador como respaldo.</div>
+      <nav class="admin-tabs">
+        <button class="active" data-tab="products">Productos y stock</button>
+        <button data-tab="promoters">Códigos promotor</button>
+        <button data-tab="promos">Promociones</button>
+        <button data-tab="settings">Configuración</button>
+      </nav>
+      <section id="tab-products" class="admin-tab">
+        <div class="admin-section-head"><h2>Productos</h2><button id="add-product" class="button">+ Nuevo producto</button></div>
+        <div id="product-editor" class="editor-list"></div>
+      </section>
+      <section id="tab-promoters" class="admin-tab" hidden>
+        <h2>Códigos de promotores</h2>
+        <form id="promoter-code-form" class="inline-form"><input name="code" required placeholder="Ej.: PROMOTOR-ANA"><button class="button">Agregar código</button></form>
+        <div id="promoter-codes" class="tag-list"></div>
+      </section>
+      <section id="tab-promos" class="admin-tab" hidden>
+        <h2>Promoción mensual</h2>
+        <form id="promo-form" class="editor-form">
+          <label>Mes o título<input name="title" placeholder="Promoción de agosto"></label>
+          <label>Oferta<textarea name="offer" placeholder="15% de descuento en la línea Stheff"></textarea></label>
+          <label>Descripción<textarea name="description" placeholder="Válida durante el mes o hasta agotar stock."></textarea></label>
+          <label>Código privado del cupón<small class="image-size-note">No se mostrará en la página. Entrégalo directamente a las personas autorizadas.</small><input name="couponCode" placeholder="Ej.: STHEFF15"></label>
+          <label>Tipo de descuento<select name="discountType"><option value="percentage">Porcentaje (%)</option><option value="fixed">Monto fijo (Bs)</option></select></label>
+          <label>Valor del descuento<input name="discountValue" type="number" min="0" step="0.01" placeholder="Ej.: 15"></label>
+          <button class="button">Guardar promoción</button>
+        </form>
+      </section>
+      <section id="tab-settings" class="admin-tab" hidden>
+        <h2>Configuración</h2>
+        <form id="password-form" class="editor-form"><label>Cambiar código de administrador<input required name="password" type="password" placeholder="Nuevo código"></label><button class="button">Actualizar código</button></form>
+        <button id="reset-catalog" class="danger-button">Restaurar catálogo de ejemplo</button>
+      </section>
+    </section>
+  </main>
+  <script src="js/productos.js?v=20260820j"></script>
+  <script src="js/admin.js?v=20260820j"></script>
+</body>
+</html>

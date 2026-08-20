@@ -1,0 +1,19 @@
+PUBLICACIÓN DE LA PÁGINA STHEFF
+================================
+
+1. Sube la carpeta completa del sitio, incluyendo api, data e img/uploads.
+2. El alojamiento debe ser compatible con PHP 8 o superior.
+3. Las carpetas data e img/uploads deben permitir escritura desde PHP.
+4. Las imágenes cargadas desde Administración se organizarán en:
+   - img/uploads/productos
+   - img/uploads/circulos
+   - img/uploads/promociones
+   - img/uploads/diseno
+   - img/uploads/logos
+   - img/uploads/paginas
+5. La lista data/image-manifest.json relaciona cada imagen con su producto o sección.
+6. El panel privado continúa en administracion-stheff-9f3.html y no aparece enlazado en la página pública.
+
+En un alojamiento solamente estático, la página seguirá funcionando, pero las nuevas
+imágenes se guardarán únicamente en el navegador del administrador. Para que las nuevas
+imágenes sean visibles para todos, utiliza un alojamiento con PHP y permisos de escritura.
